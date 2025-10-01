@@ -1,0 +1,12 @@
+<h1>Result</h1>
+
+<% if @result[:valid] %>
+  <p class="result success"><strong>✓ <%= @result[:message] %></strong></p>
+<% else %>
+  <p class="result error"><strong>✗ <%= @result[:message] %></strong></p>
+<% end %>
+
+<p>Your word: <strong><%= @word.upcase %></strong></p>
+<p>Letters available: <strong><%= @letters.join(', ') %></strong></p>
+
+<%= link_to "Play again", new_path %>
